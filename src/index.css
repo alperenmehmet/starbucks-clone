@@ -1,0 +1,19 @@
+:root {
+  --clr-green-1: #D4E9E2;
+  --clr-pink: #FA91AA;
+  --clr-green-2: #9BF5B4;
+  --clr-font-paraghraph: #1E4E69;
+  --clr-font-title: #1E3932;
+  --clr-white: #fff;
+  --line-height: 1.5;
+}
+
+body {
+  font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: var(--clr-white);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
