@@ -1,10 +1,11 @@
 import rewards from './assets/rewards.webp';
+import Main from './components/Main';
 
 const App = () => {
   return (
-    <div>
-      <img src={rewards} alt='' />
-    </div>
+    <>
+      <Main />
+    </>
   );
 };
 
