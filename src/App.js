@@ -1,5 +1,5 @@
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Main from './components/Main'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
       <Main />
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
