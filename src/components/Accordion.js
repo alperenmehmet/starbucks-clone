@@ -1,22 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
 const Accordion = ({ title, links }) => {
   const [showLinks, setShowLinks] = useState(false)
 
-  const linksResize = () => {
-    if (window.innerWidth >= 992) {
-      setShowLinks(!showLinks)
+  useLayoutEffect(() => {
+    const linksResize = () => {
+      if (window.innerWidth >= 992) {
+        setShowLinks(!showLinks)
+      }
+      if (window.innerWidth < 992) {
+        setShowLinks(showLinks)
+      }
     }
-    if (window.innerWidth < 992) {
-      setShowLinks(showLinks)
-    }
-  }
-
-  useEffect(() => {
     window.addEventListener('resize', linksResize)
+    linksResize()
     return () => window.removeEventListener('resize', linksResize)
   }, [])
+
+  // useEffect(() => {
+  //  window.addEventListener('resize', linksResize)
+  //return () => window.removeEventListener('resize', linksResize)
+  // }, [])
 
   return (
     <div className="accordion">
