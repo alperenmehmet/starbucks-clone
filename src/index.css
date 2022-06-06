@@ -152,6 +152,12 @@ a {
   line-height: var( --line-height );
 }
 
+.accordion li{
+  text-transform: capitalize;
+  color: var(--clr-font-paraghraph);
+  margin-bottom: 2rem;
+}
+
 .down-up-btn{
   border: none;
   border-radius: 50%;
@@ -211,5 +217,32 @@ a {
 .rights-year{
   padding-top: 0.7rem;
   color: lightslategray;
+}
+
+@media screen and (min-width: 992px){
+  .accordion-parent{
+    display: flex;
+    gap: 2rem;
+
+  }
+  .down-up-btn{
+    display: none;
+  }
+
+  .accordion{
+    max-width: 190px;
+  }
+
+  .accordion li{
+    line-height: var(--line-height);
+  }
+  .accordion li:hover{
+    color:black;
+    cursor: pointer;
+  }
+
+  .accordion-header p{
+    font-weight: 700;
+  }
 }
 

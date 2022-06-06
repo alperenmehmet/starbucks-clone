@@ -14,7 +14,7 @@ const Footer = () => {
   const [data, setData] = useState(footerLinks)
   return (
     <div className="footer main">
-      <div>
+      <div className="accordion-parent">
         {data.map((item) => {
           return <Accordion {...item} key={item.id} />
         })}
