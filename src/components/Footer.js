@@ -1,6 +1,4 @@
 import {
-  FaChevronDown,
-  FaChevronUp,
   FaSpotify,
   FaFacebook,
   FaPinterest,
@@ -8,67 +6,16 @@ import {
   FaYoutube,
   FaTwitter
 } from 'react-icons/fa'
+import Accordion from './Accordion'
 import { useState } from 'react'
-
-const footerLinks = [
-  {
-    id: 1,
-    title: 'about us',
-    links: [
-      'our company',
-      'our coffee',
-      'stories and news',
-      'starbucks archive',
-      'investor relations',
-      'customer services'
-    ]
-  },
-  {
-    id: 2,
-    title: 'about us',
-    links: [
-      'our company',
-      'our coffee',
-      'stories and news',
-      'starbucks archive',
-      'investor relations',
-      'customer services'
-    ]
-  }
-]
-
-const Accordion = () => {
-  const [showLinks, setShowLinks] = useState(false)
-
-  return (
-    <div>
-      <div>
-        about us
-        <button onClick={() => setShowLinks(!showLinks)}>
-          {showLinks ? <FaChevronUp /> : <FaChevronDown />}
-        </button>
-      </div>
-      <ul>
-        {showLinks && (
-          <div>
-            <li>our company</li>
-            <li>our coffee</li>
-            <li>stories and news</li>
-            <li>starbucks archive</li>
-            <li>investor relations</li>
-            <li>customer services</li>
-          </div>
-        )}
-      </ul>
-    </div>
-  )
-}
+import { footerLinks } from '../data'
 
 const Footer = () => {
+  const [data, setData] = useState(footerLinks)
   return (
-    <div className="footer">
-      <div className="">
-        {footerLinks.map((item) => {
+    <div className="footer main">
+      <div>
+        {data.map((item) => {
           return <Accordion {...item} key={item.id} />
         })}
       </div>
