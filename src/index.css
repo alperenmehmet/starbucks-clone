@@ -14,7 +14,7 @@ body {
   background: var(--clr-white);
 }
 
-img {
+img:not(.navbar-logo) {
   width: 100%;
   display: block;
 }
@@ -140,109 +140,228 @@ a {
 /* <== footer ==> */
 
 
-.accordion-header{
+.accordion-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.accordion-header p{
-  text-transform: capitalize ;
-  color: rgba(0,0,0,0.87);
-  line-height: var( --line-height );
+.accordion-header p {
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: var(--line-height);
 }
 
-.accordion li{
+.accordion li {
   text-transform: capitalize;
   color: var(--clr-font-paraghraph);
   margin-bottom: 2rem;
 }
 
-.down-up-btn{
+.down-up-btn {
   border: none;
   border-radius: 50%;
   background: var(--clr-white);
   font-size: 1.2rem;
-  color: rgba(0,0,0,0.87);
+  color: rgba(0, 0, 0, 0.87);
   padding: 15px;
   text-align: center;
   transition: all 0.3s ease-out;
 }
 
-.down-up-btn:hover{
+.down-up-btn:hover {
   cursor: pointer;
   border-radius: 50%;
-  background:#dadada ;
+  background: #dadada;
   border: none;
 }
 
-.footer{
-  border-top: 2px solid  lightgray;
+.footer {
+  border-top: 2px solid lightgray;
   padding-top: 2rem;
 }
 
-.footer-icons{
-  border-top: 2px solid  lightgray;
+.footer-icons {
+  border-top: 2px solid lightgray;
   padding-top: 2rem;
   font-size: 2rem;
 
 }
 
-.footer-icons a{
+.footer-icons a {
   margin-right: 1.2rem;
   color: black;
 }
 
-.footer-icons a:hover{
+.footer-icons a:hover {
   border-radius: 50%;
 }
 
-.company-info{
+.company-info {
   padding-top: 1rem;
 }
 
-.company-info li{
+.company-info li {
   padding-top: 0.7rem;
   text-transform: capitalize;
 }
 
-.company-info a{
+.company-info a {
   color: var(--clr-font-title);
 }
 
-.company-info a:hover{
+.company-info a:hover {
   text-decoration: underline;
 }
 
-.rights-year{
+.rights-year {
   padding-top: 0.7rem;
   color: lightslategray;
 }
 
-@media screen and (min-width: 992px){
-  .accordion-parent{
+@media screen and (min-width: 992px) {
+  .accordion-parent {
     display: flex;
     gap: 2rem;
 
   }
-  .down-up-btn{
+
+  .down-up-btn {
     display: none;
   }
 
-  .accordion{
+  .accordion {
     max-width: 190px;
   }
 
-  .accordion li{
+  .accordion li {
     line-height: var(--line-height);
   }
-  .accordion li:hover{
-    color:black;
+
+  .accordion li:hover {
+    color: black;
     cursor: pointer;
   }
 
-  .accordion-header p{
+  .accordion-header p {
     font-weight: 700;
   }
 }
 
+/* <== navbar ==> */
+
+.navbar {
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%) */
+}
+
+.nav-center {
+  width: 95vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-links,
+.nav-buttons {
+  display: none;
+}
+
+.navbar-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media screen and (min-width:786px) {
+
+
+  .nav-center {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .nav-links {
+    display: flex;
+    flex: 1;
+    margin-left: 2rem;
+    gap: 2rem
+  }
+
+  .nav-links a {
+    color: black;
+    font-weight: 700;
+    font-size: .875rem;
+    letter-spacing: .125rem;
+    transition: var(--transition);
+  }
+
+  .nav-links a:hover {
+    color: var(--clr-font-title);
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .white-btn {
+    color: #000;
+    font-weight: 600;
+  }
+
+  .toggle-btn {
+    display: none
+  }
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 106px;
+  right: 0;
+  width: 100%;
+  height: calc(100% - 106px);
+  background: rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%) */
+  transition: var(--transition);
+  transform: translateX(100%);
+}
+
+.show-sidebar {
+  transform: translateX(0);
+}
+
+.sidebar-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80vw;
+  height: 100%;
+  background: white;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width:786px) {
+  .sidebar {
+    display: none;
+  }
+}
